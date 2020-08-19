@@ -36,7 +36,7 @@
             </div>
             <div class="project-text  elem-anim-up">
                 <h2>About it</h2>
-                {{ project.text|safe }} {# Extremamente necessário o "*/safe"#}
+                {{ project.text| safe |linebreaksbr }} {# Extremamente necessário o "*/safe"#}
             </div>
         </div>
     </div>

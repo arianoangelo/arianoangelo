@@ -9,6 +9,9 @@ urlpatterns = [
                   path('', include('index.urls')),
                   path('projects/', include('portfolio.urls')),
                   path('admin/', admin.site.urls),
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# Serve para que consiga carregar as imagens
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]
+# To load media images
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 import datetime
+from tinymce.models import HTMLField
 
 
 # Create your models here.
@@ -40,7 +41,7 @@ class Project(models.Model):
     Definir o item do portfólio.
     """
     name = models.CharField(max_length=200, help_text='Type the name')
-    text = models.CharField(max_length=200, help_text='Type the name')
+    text = HTMLField(default='')
     portfolio_image = models.ImageField(upload_to='portfolio-photos')
     date = models.IntegerField('year', choices=YEAR_CHOICES, default=datetime.datetime.now().year)
     timestamp = models.DateField(auto_now_add=True)
