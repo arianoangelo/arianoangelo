@@ -1,0 +1,24 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+    <main class="project-list">
+        <div class="container">
+            <div class="header-container">
+                <h1 class="page-title elem-anim-up">Projects</h1>
+                <h5 class="page-subtitle elem-anim-up">I'm a Web Developer / Designer.</h5>
+            </div>
+            <div class="row">
+                {% for project in project_list %}
+                    <div class="col-lg-4 col-sm-6 col-12 elem-anim-up">
+                        <div class="project-ctr">
+                            <a href="{{ project.get_absolute_url }}" class="project-link d-flex flex-column justify-content-center align-items-center">
+                                <img class="img-fluid" src="{{ project.portfolio_image.url }}"
+                                     alt="{{ project.name }}"/>
+                                <div class="project-title">{{ project.name }}</div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

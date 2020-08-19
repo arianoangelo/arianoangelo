@@ -1,0 +1,43 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+    <div class="container">
+        <div class="project-images-ctr elem-anim-up">
+            <div class="swiper-project swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-img">
+                            <img class="img-fluid" src="{{ project.portfolio_image.url }}"
+                                 alt="{{ project.name }}"/>
+                        </div>
+                    </div>
+                    {% for Images in project.images.all %}
+                        <div class="swiper-slide">
+                            <div class="project-img">
+                                <img class="img-fluid" src="{{ Images.image.url }}" alt="{{ Images.name }}"/>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="project-pagination"></div>
+            </div>
+        </div>
+        <div class="project-ct">
+            <div class="project-spec elem-anim-up">
+                <h1>{{ project.name }}</h1>
+                <h2>Category \\ </h2>
+                <p>{% for Category in project.category.all %}
+                    {{ Category.name }}
+                {% endfor %}
+                </p>
+            </div>
+            <div class="project-spec  elem-anim-up">
+                <h2>Date \\ </h2>
+                <p>{{ project.date }}</p>
+            </div>
+            <div class="project-text  elem-anim-up">
+                <h2>About it</h2>
+                {{ project.text|safe }} {# Extremamente necessário o "*/safe"#}
+            </div>
+        </div>
+    </div>
+{% endblock %}

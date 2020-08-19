@@ -1,0 +1,6 @@
+**/__pycache__
+node_modules/
+.idea/
+*.pyc
+arianoangelo/settings.py
+arianoangelo/wsgi.py
