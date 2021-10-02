@@ -1,5 +1,8 @@
 'use strict'
 
+/*
+ * Avoided using jQuery
+ */
 function docReady(fn) {
     // see if DOM is already available
     if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -16,6 +19,11 @@ docReady(function () {
     let sideOverlay = document.querySelector('.sidenav-overlay');
     let sideCloseBtn = document.querySelector('.sidenav-close');
 
+    /*
+     * Check is element is in view
+     * Should probably change this since it adds load to the website
+     * due to being constantly checking for elements
+     */
     function isScrolledIntoView(e) {
         let rect = e.getBoundingClientRect();
         let elemTop = rect.top;
@@ -23,6 +31,10 @@ docReady(function () {
         return elemTop < window.innerHeight && elemBottom >= 5;
     }
 
+    /*
+     * Fires up the animation checking function.
+     *
+     */
     function checkAni() {
         const elemAnimUp = document.querySelectorAll('.elem-anim-up');
 
@@ -34,6 +46,11 @@ docReady(function () {
         }
     }
 
+    /*
+     * This is where the window event listener it's added.
+     * Everytime the user scrolls it will check if the element it's on the screen
+     * I know, it's not the best way to do this, will change when I have more time.
+     */
     window.addEventListener('scroll', function () {
         checkAni();
     });
@@ -69,8 +86,4 @@ docReady(function () {
             clickable: true,
         }
     });
-
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
 })
