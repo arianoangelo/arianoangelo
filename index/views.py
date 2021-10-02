@@ -9,7 +9,7 @@ def index(request):
     """
     options = {
         'site_title': 'Ariano Ângelo',
-        'site_description': 'Web Developer/Designer from Portugal',
+        'site_description': 'Web Developer',
     }
 
     return render(request, 'index/index.html', options)

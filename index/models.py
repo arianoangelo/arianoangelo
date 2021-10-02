@@ -1,4 +1,1 @@
-from django.db import models
-
-# Create your models here.
-
+# We don't need models here...

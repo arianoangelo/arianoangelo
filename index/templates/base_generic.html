@@ -1,19 +1,19 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <title>{{ site_title }} - {{ site_description }}</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap/css/bootstrap-grid.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'vendor/bootstrap/css/bootstrap-reboot.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'vendor/fontawesome/css/all.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'vendor/swiperjs/css/swiper.min.css' %}" rel="stylesheet"/>
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+    <link href="{% static '/vendor/bootstrap/css/bootstrap-grid.min.css' %}" rel="stylesheet"/>
+    <link href="{% static '/vendor/bootstrap/css/bootstrap-reboot.min.css' %}" rel="stylesheet"/>
+    <link href="{% static '/vendor/fontawesome/css/all.min.css' %}" rel="stylesheet"/>
+    <link href="{% static '/vendor/swiperjs/css/swiper.min.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}?1.1"/>
 </head>
 {% url 'index' as home_url %}
-<body {% if request.get_full_path == home_url %}class="home"{% endif %}>
+<body {% if request.get_full_path  == home_url %}class="home"{% endif %}>
 <header>
     <nav class="d-flex justify-content-center align-items-center">
         <div class="container">
@@ -39,7 +39,7 @@
 {% block content %}{% endblock %}
 <footer>
     <div class="footer-ctr elem-anim-up">
-        <div class="social-container">
+        <div class="contacts-container">
             <a class="social-logo" href="https://github.com/arianoangelo" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
                     <defs>
@@ -106,6 +106,6 @@
 </footer>
 {% load static %}
 <script type="text/javascript" src="{% static 'vendor/swiperjs/js/swiper.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'assets/js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/script.js' %}?1.1"></script>
 </body>
 </html>

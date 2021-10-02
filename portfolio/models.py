@@ -49,6 +49,11 @@ class Project(models.Model):
     images = models.ManyToManyField(Image, help_text='Select the images of this post', blank=True)
     slug = models.SlugField(unique=True)
 
+    class Meta:
+        verbose_name = 'Project'
+        verbose_name_plural = 'Project'
+        ordering = ['-date']
+
     def get_absolute_url(self):
         slug = slugify(self.name)
         """Returns the urls to access a detail record for this item."""

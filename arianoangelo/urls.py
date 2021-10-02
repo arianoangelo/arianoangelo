@@ -6,12 +6,12 @@ from django.conf.urls.static import static
 # from django.views.generic import RedirectView
 
 urlpatterns = [
-                  path('', include('index.urls')),
-                  path('projects/', include('portfolio.urls')),
-                  path('admin/', admin.site.urls),
-              ]
-# To load media images
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', include('index.urls')),
+    path('projects/', include('portfolio.urls')),
+    path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
+]
 
+# To load media images
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
