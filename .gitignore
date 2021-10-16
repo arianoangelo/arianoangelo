@@ -1,6 +1,15 @@
 **/__pycache__
 node_modules/
 .idea/
+code/
 *.pyc
-arianoangelo/settings.py
-arianoangelo/wsgi.py
+venv/
+media/
+static/
+dump_arianoangelo.sql
+settings_docker.py
+settings.py
+**/migrations
+*.sql
+
+#docker-compose.yml
