@@ -1,0 +1,27 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+@mixin transform-origin($property) {
+  -webkit-transform-origin: $property;
+  -moz-transform-origin: $property;
+  -o-transform-origin: $property;
+  transform-origin: $property;
+}
+
+@mixin animation($property) {
+  -webkit-animation: $property;
+  -moz-animation: $property;
+  -o-animation: $property;
+  animation: $property;
+}
+
+@mixin animation-iteration-count($property) {
+  -webkit-animation-iteration-count: $property;
+  -moz-animation-iteration-count: $property;
+  -o-animation-iteration-count: $property;
+  animation-iteration-count: $property;
+}

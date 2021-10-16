@@ -1,0 +1,112 @@
+.projects {
+  margin-bottom: 60px;
+
+  &__project {
+    margin-bottom: calc(var(--bs-gutter-x) * 1);
+    height: 400px;
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: .085rem;
+    }
+
+    img {
+      width: 70%;
+    }
+  }
+
+  &__project-link {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -webkit-transition: -webkit-shadow 0.4s cubic-bezier(0.33, 1, 0.68, 1) 0s;
+    transition: box-shadow 0.4s cubic-bezier(0.33, 1, 0.68, 1) 0s;
+    height: 100%;
+    text-decoration: none;
+    color: #424242;
+
+    &:hover {
+      color: #424242;
+      -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.35);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.35);
+    }
+
+  }
+}
+
+/* Single */
+
+.project-detail {
+  &__images {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  &__image {
+    text-align: center;
+
+    img {
+      width: 500px;
+    }
+  }
+
+  &__content {
+    background-color: #fafafa;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 5%;
+    margin-bottom: 100px;
+  }
+
+  &__text {
+    h1 {
+      font-family: "Poppins", sans-serif !important;
+      font-size: 1.25rem;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: $letter_spacing_2;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-weight: 600;
+    }
+
+    h2, p {
+      display: inline-block;
+      font-size: .875rem;
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: .875rem;
+      letter-spacing: $letter-spacing_3;
+    }
+
+    &:last-child {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: 5;
+    text-align: center;
+
+    button {
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: #ccc;
+      margin: 0 5px;
+    }
+
+    button.swiper-pagination-bullet-active {
+      background: #424242;
+    }
+  }
+}

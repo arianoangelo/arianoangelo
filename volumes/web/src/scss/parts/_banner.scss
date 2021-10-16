@@ -1,0 +1,33 @@
+.banner {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      letter-spacing: $letter_spacing_3;
+      line-height: 1.4;
+      color: #FFF;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

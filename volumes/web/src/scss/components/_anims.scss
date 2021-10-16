@@ -1,0 +1,21 @@
+$easing: cubic-bezier(0.33, 1, 0.68, 1);
+
+.anim,
+.anim-up,
+.anim-left,
+.anim-right,
+.anim-fade {
+  opacity: 0;
+}
+
+.anim-up {
+  transform: translateY(100px) translateX(0);
+}
+
+.anim-left {
+  transform: translateX(-100px) translateY(0);
+}
+
+.anim-right {
+  transform: translateX(100px) translateY(0);
+}

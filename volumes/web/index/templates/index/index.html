@@ -1,0 +1,98 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+    {% load static %}
+    <div class="banner" style="background-image: url('{% static 'assets/img/banner.jpg' %}')" role="figure">
+        <div class="banner__overlay d-flex align-items-center">
+            <div class="container anim-up animate">
+                <h1>
+                    Hello, my name is Ariano<br/>
+                    and I'm a Web Developer.
+                </h1>
+            </div>
+        </div>
+    </div>
+    <main class="home">
+        <div class="container home__resume">
+            <div class="home__resume-title anim-up animate">
+                <h1>My Résumé</h1>
+                <p>(For the complete version <a href="mailto:ariano.f.angelo@gmail.com">contact me</a>)</p>
+            </div>
+            <div class="home__resume-body">
+                <h2 class="anim-up animate">Education</h2>
+                <ul class="anim-up animate">
+                    <li>
+                        <span> 2016_2019 ></span> Comunicação e Design Multimédia na Escola
+                        Superior de Educação de Coimbra.
+                    </li>
+                </ul>
+                <h2 class="anim-up animate">
+                    Work Experience
+                </h2>
+                <ul class="anim-up animate">
+                    <li>
+                        <span>2017_2017 ></span> Author at 4Gnews
+                    </li>
+                    <li>
+                        <span>2019_2019 ></span> Internship at Rui Veríssimo Design
+                    </li>
+                    <li>
+                        <span>2019_2020 ></span> Professional Internship at Rui Veríssimo Design
+                    </li>
+                    <li>
+                        <span>2020_PRESENT ></span> Web Developer at Rui Veríssimo Design
+                    </li>
+                </ul>
+                <h2 class="anim-up animate">
+                    Skills
+                </h2>
+                <ul class="anim-up animate">
+                    <li>
+                        CSS / Sass
+                    </li>
+                    <li>
+                        JavaScript / NodeJS / React / Next.js / Strapi / Gulp / Webpack
+                    </li>
+                    <li>
+                        Python / Django
+                    </li>
+                    <li>
+                        PHP / WordPress / WooCommerce
+                    </li>
+                    <li>
+                        SQL / MySQL / PostgreSQL
+                    </li>
+                    <li>
+                        Linux / CLI / Docker / Apache2 / Ngix ...
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="home__about">
+            <div class="container">
+                <div class="row anim-up animate">
+                    <div class="col-lg-3 col-12">
+                        <div class="home__about-title">
+                            <h2>ABOUT ME</h2>
+                            <span>Learn a bit about me...</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-12">
+                        <div class="home__about-text">
+                            <p>
+                                I'm a 24 year old Web Developer graduated from Escola Superior de Educação de Coimbra in
+                                "Comunicação e Design Multimédia".
+                            </p>
+                            <p>
+                                I love everything about technology, since programming to just know learn about random stuff like gadgets.
+                            </p>
+                            <p>
+                                I will be always willing to learn new technologies and other stuff if you need me to, since I already do it on my spare time.
+                                That's why I'm always improving <em>this</em> website with new stuff. Check my Github to see my progress!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

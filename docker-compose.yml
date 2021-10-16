@@ -1,0 +1,35 @@
+version: "3.3"
+
+networks:
+    web_net:
+        external: false
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./code/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=arianoangelo
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: arianoangelo-web
+    environment:
+      MODULE_NAME: arianoangelo.asgi
+      VARIABLE_NAME: application
+    command: run_server
+    restart: unless-stopped
+    networks:
+      - web_net
+    depends_on:
+      - db
+    volumes:
+      - ./volumes/web:/app
+    expose:
+      - "80"
+
