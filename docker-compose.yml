@@ -1,14 +1,16 @@
 version: "3.3"
 
 networks:
-    web_net:
-        external: false
+  nginx-router_default:
+    external: true
 
 services:
   db:
     image: postgres
     volumes:
       - ./code/db:/var/lib/postgresql/data
+    networks:
+      - nginx-router_default
     environment:
       - POSTGRES_DB=arianoangelo
       - POSTGRES_USER=postgres
@@ -25,11 +27,12 @@ services:
     command: run_server
     restart: unless-stopped
     networks:
-      - web_net
+      - nginx-router_default
     depends_on:
       - db
     volumes:
       - ./volumes/web:/app
     expose:
       - "80"
+      - "443"
 

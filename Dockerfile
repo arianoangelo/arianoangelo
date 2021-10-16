@@ -13,7 +13,7 @@ RUN apt-get update \
     && apt-get install -y tar git python3 python3-dev python3-pip cron default-libmysqlclient-dev default-mysql-client
 
 RUN mkdir /conf
-ADD ../.. /conf
+ADD . /conf
 WORKDIR /conf
 
 COPY run_server /usr/local/bin/run_server
@@ -21,7 +21,6 @@ RUN chmod +x /usr/local/bin/run_server
 
 RUN pip3 install -r requirements.txt
 
-COPY ./app /app
 WORKDIR /app
 
 ENV DEBIAN_FRONTEND teletype
