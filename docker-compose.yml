@@ -2,13 +2,28 @@ version: "3.3"
 
 networks:
   nginx-router_default:
-    external: true
-
 services:
+  nginx:
+      networks:
+        - nginx-router_default
+      build:
+        context: ../arianoangelo/conf/nginx
+        dockerfile: nginx.dockerfile
+      image: nginx-router
+      container_name: nginx_router
+      restart: unless-stopped
+      volumes:
+        - ./volumes/web/media:/data/media
+        - ./volumes/web/static:/data/static
+      depends_on:
+        - web
+      ports:
+        - "80:80"
+        - "443:443"
   db:
     image: postgres
     volumes:
-      - ./code/db:/var/lib/postgresql/data
+      - ./volumes/db:/var/lib/postgresql/data
     networks:
       - nginx-router_default
     environment:
@@ -18,7 +33,7 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
   web:
     build:
-      context: ./
+      context: ./conf/web
       dockerfile: Dockerfile
     container_name: arianoangelo-web
     environment:
@@ -34,5 +49,4 @@ services:
       - ./volumes/web:/app
     expose:
       - "80"
-      - "443"
 

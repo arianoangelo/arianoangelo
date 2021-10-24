@@ -1,7 +1,7 @@
 **/__pycache__
 node_modules/
 .idea/
-code/
+volumes/code/
 *.pyc
 venv/
 media/
@@ -11,5 +11,8 @@ settings_docker.py
 settings.py
 **/migrations
 *.sql
+cert.key
+cert.pem
+volumes/db
 
 #docker-compose.yml

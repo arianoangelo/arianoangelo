@@ -10,7 +10,7 @@ RUN apt-get update --fix-missing \
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get autoremove -y \
-    && apt-get install -y tar git python3 python3-dev python3-pip cron default-libmysqlclient-dev default-mysql-client
+    && apt-get install -y tar git python3 python3-dev python3-pip cron postgresql-client
 
 RUN mkdir /conf
 ADD . /conf
