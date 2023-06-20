@@ -1,7 +1,13 @@
 #!/bin/bash
 
-service cron start;
+# Start the cron service
+service cron start
+
+# Add a crontab using the Django crontab command
 /usr/local/bin/python3 manage.py crontab add -v=0
+
+# Collect static files using the Django collectstatic command
 /usr/local/bin/python3 manage.py collectstatic --noinput
 
-/start.sh
+# Start the Django server using gunicorn
+gunicorn arianoangelo.wsgi:application --bind 0.0.0.0:80

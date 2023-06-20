@@ -6,6 +6,7 @@ services:
   nginx:
       networks:
         - nginx-router_default
+      platform: linux/arm64
       build:
         context: ../arianoangelo/conf/nginx
         dockerfile: nginx.dockerfile
@@ -21,7 +22,8 @@ services:
         - "80:80"
         - "443:443"
   db:
-    image: postgres
+    image: postgres:14
+    platform: linux/arm64
     volumes:
       - ./volumes/db:/var/lib/postgresql/data
     networks:
